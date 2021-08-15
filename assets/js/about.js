@@ -1,0 +1,115 @@
+function works(xCategory,xlink,xImage,xGithublink,xTitle)
+{
+    this.Category=xCategory;
+    this.link=xlink;
+    this.image=xImage;
+    this.githublink=xGithublink;
+    this.title=xTitle;
+}
+function skillsName(){
+    this.skil1="PHP";
+    this.skil2="HTML5/CSS3";
+    this.skil3="Web Application";
+    this.skil4="Windows Application";
+    this.skil3="Machain Learning";
+}
+var skillsNameArr=["PHP","HTML5/CSS3","WebApplication","WindowsApplication","MachainLearning"];
+
+function aboutme(xdetails,xphoto,xskillsTitle){
+    this.Details=xdetails;
+    this.Photo=xphoto;
+    this.SkillsTitle=xskillsTitle;
+}
+function contact(xemail,xphone,xlocation,xinformation)
+{
+    this.Email=xemail;
+    this.Phone=xphone;
+    this.Location=xlocation;
+    this.Information=xinformation;
+}
+function galarry(xpathImage,ximage)
+{
+    this.PathImage=xpathImage;
+    this.Image=ximage;
+    
+}
+
+// function user (xiamge,fname,lname,address,xcontact){
+//     this.Image=ximage;
+//     this.FisrtName=fname;
+//     this.LastName=lname;
+//     this.Address=address;
+//     this.Contact=xcontact;
+// }
+/////////////////////contactus//////////////////////////////
+var Contactus=new contact("rana_abdullah77@yahoo.com","+9647814357048","Baghdad","Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.")
+
+////////////////////////gallary////////////////////////////////////
+var Gallary=new galarry("c://image1.jpg","imag1.jpg");
+
+////////////////////About Me/////////////////////////////////////////////
+var About=new aboutme("I’m a Web Designer & Application Developer.I program’s and analysis Systems,And I Have B.Sc. Degree in Computer Science.","photo","skills")
+
+//////////////////////////     About Page     //////////////////////////////////////////////////
+function user (ximagePath,fname,lname,age,address,xabout,xContactus){
+    this.ImagePath=ximagePath;
+    this.FisrtName=fname;
+    this.LastName=lname;
+    this.Age=age;
+    this.Address=address;
+    this.propAbout=xabout;
+    this.Contact=xContactus;
+}
+var me=new user("image/avatar.jpg","Rana","Abdullah","44","Baghdad",About,Contactus);
+//document.write(jsonSkill);
+
+document.getElementById("myName").innerHTML="Hey, I am " +me.FisrtName+" "+me.LastName;
+document.getElementById("about").innerHTML=me.propAbout.Details;
+document.getElementById("address").innerHTML=me.Contact.Location;
+document.getElementById("phone").innerHTML=me.Contact.Phone;
+document.getElementById("email").innerHTML=me.Contact.Email;
+const ulSkill=document.getElementById("ulParent");
+       
+for(const objSkill in skillsNameArr){
+    const skillDiv=document.createElement("div");
+    skillDiv.classList.add(skillsNameArr[objSkill]);
+    console.log(skillsNameArr[objSkill]);
+    skillDiv.innerHTML=`<li class="mb-3">
+        <div class="d-flex mb-1">
+            <strong>${skillsNameArr[objSkill]}</strong>
+            <span class="ml-auto">80%</span>
+        </div>
+        <div class="progress custom-progress">
+            <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </li>`
+    ulSkill.appendChild(skillDiv);
+}
+const imgAvatar=document.getElementById("imgAvatar");
+imgAvatar.innerHTML=`
+<img src="${me.ImagePath}" alt="Image" class="img-fluid"></img>
+`
+
+/////////////////////////////////////skills////////////////////////////////////////////////////////////////////////////////
+var work1 =new works("web","https://heuristic-benz-56a9d2.netlify.app/","image/quize.png","https://github.com/temamen/QuizJavascript.git","Quize");
+var work2 =new works("web","https://amazing-ride-224e1a.netlify.app/index.html","image/netflex.png","linkGithub","Netflex");
+var work3 =new works("web","https://brave-mccarthy-dc6ddd.netlify.app/","image/chalange.jpg","https://github.com/temamen/ChallengeXTeam.git","chalange");
+var work4 =new works("web","https://angry-allen-b4cb2b.netlify.app/","image/cinema.png","https://github.com/temamen/myCinamana.git","Cinemana");
+
+var work5 =new works("design","http://index.html","image/web1.jpg","linkGithub","Templat1");
+var work6 =new works("design","http://index.html","image/web2.jpg","linkGithub","Templat2");
+var work7 =new works("design","http://index.html","image/web3.jpg","linkGithub","Templat3");
+
+var work8 =new works("MachainLearning","http://index.html","image/web4.jpg","linkGithub","detials4");
+var work9 =new works("MachainLearning","http://index.html","image/web2.jpg","linkGithub","detials5");
+
+let allWorks=[];
+allWorks.push(work1);
+allWorks.push(work2);
+allWorks.push(work3);
+allWorks.push(work4);
+allWorks.push(work5);
+allWorks.push(work6);
+allWorks.push(work7);
+allWorks.push(work8);
+allWorks.push(work9);
